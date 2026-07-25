@@ -25,7 +25,7 @@ enum AssetStatus {
 model SubmissionAsset {
   id               String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   submissionId     String      @map("submission_id") @db.Uuid
-  immichAssetId    String?     @unique @map("immich_asset_id") @db.Uuid
+  immichAssetId    String?     @map("immich_asset_id") @db.Uuid
   originalFilename String      @map("original_filename")
   mimeType         String?     @map("mime_type") @db.VarChar(100)
   fileSizeBytes    BigInt?     @map("file_size_bytes")
@@ -39,6 +39,7 @@ model SubmissionAsset {
 
   @@index([status])
   @@index([submissionId])
+  @@index([immichAssetId])
   @@map("submission_assets")
 }
 

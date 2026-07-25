@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@immich/sdk':
+        specifier: ^3.0.3
+        version: 3.0.3
       '@prisma/adapter-pg':
         specifier: ^7.9.0
         version: 7.9.0
@@ -374,6 +377,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@immich/sdk@3.0.3':
+    resolution: {integrity: sha512-nbtCG/8Bt7tllfAcxPoRzyijxzypS1f3prwPYXE8GVmxbatQiBYUPwFH/JwOBCzXEIFmWma4l1UEcfAyA4STWQ==}
+
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
 
@@ -469,6 +475,9 @@ packages:
   '@nolyfill/is-core-module@1.0.39':
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
+
+  '@oazapfts/runtime@1.2.0':
+    resolution: {integrity: sha512-fi7dp7dNayyh/vzqhf0ZdoPfC7tJvYfjaE8MBL1yR+iIsH7cFoqHt+DV70VU49OMCqLc7wQa+yVJcSmIRnV4wA==}
 
   '@prisma/adapter-pg@7.9.0':
     resolution: {integrity: sha512-kPYuFvNTlqnaFf2UpXBBG3ycTT3PL76uSZtLFBEwDytjMMUW8ZHrsb9cSNIarzdPW5EXWmBOeOq9/MVjMtbWkA==}
@@ -2872,6 +2881,10 @@ snapshots:
   '@img/sharp-win32-x64@0.34.5':
     optional: true
 
+  '@immich/sdk@3.0.3':
+    dependencies:
+      '@oazapfts/runtime': 1.2.0
+
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -2941,6 +2954,8 @@ snapshots:
       fastq: 1.20.1
 
   '@nolyfill/is-core-module@1.0.39': {}
+
+  '@oazapfts/runtime@1.2.0': {}
 
   '@prisma/adapter-pg@7.9.0':
     dependencies:
