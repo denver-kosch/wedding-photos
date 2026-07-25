@@ -1,13 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #519283;
+  --foreground: #1c2526;
+  --wedding-sage: #7F948F;
+  --wedding-cream: #f8f3e8;
+  --wedding-rose: #c98f91;
+  --wedding-stormcloud: #4F666A;
+  --wedding-mint-gray: #98ABA7;
+  --wedding-rosewood: #E1C8C4;
+  --wedding-rock-salt: #E8D3D0;
+  --wedding-champagne: #FBEACD;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-wedding-sage: var(--wedding-sage);
+  --color-wedding-cream: var(--wedding-cream);
+  --color-wedding-rose: var(--wedding-rose);
+  --color-wedding-stormcloud: var(--wedding-stormcloud);
+  --color-wedding-mint-gray: var(--wedding-mint-gray);
+  --color-wedding-rosewood: var(--wedding-rosewood);
+  --color-wedding-rock-salt: var(--wedding-rock-salt);
+  --color-wedding-champagne: var(--wedding-champagne);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -15,7 +33,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #f8f3e8;
   }
 }
 
