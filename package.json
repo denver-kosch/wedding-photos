@@ -1,12 +1,13 @@
 {
   "name": "wedding_photos",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "release:image": "./scripts/release-image.sh",
+    "docker:test:build": "docker build -t wedding-photos:test .",
+    "docker:test:run": "docker run --rm --name wedding-photos-test --env-file .env.docker -p 3001:3000 wedding-photos:test"
   },
   "dependencies": {
     "@immich/sdk": "^3.0.3",
