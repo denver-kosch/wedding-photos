@@ -12,23 +12,15 @@ export default () => {
     const previewUrls = useRef<string[]>([]);
     const inputRef = useRef<HTMLInputElement>(null);
 
-    function handlePhotosSelected(event: React.ChangeEvent<HTMLInputElement>) {
+    const handlePhotosSelected = (event: React.ChangeEvent<HTMLInputElement>) => {
         previewUrls.current.forEach((url) => {URL.revokeObjectURL(url)});
-
         const files = Array.from(event.target.files ?? []);
-
-        const newPreviews = files.map((file) => ({
-            file,
-            url: URL.createObjectURL(file),
-        }));
-
-        console.log("Selected files:", files);
-
+        const newPreviews = files.map((file) => ({ file, url: URL.createObjectURL(file) }));
         previewUrls.current = newPreviews.map((preview) => preview.url);
         setPreviews(newPreviews);
-    }
+    };
 
-    function removePhoto(urlToRemove: string) {
+    const removePhoto = (urlToRemove: string) => {
         const remainingPreviews = previews.filter((preview) => preview.url !== urlToRemove);
         URL.revokeObjectURL(urlToRemove);
         previewUrls.current = previewUrls.current.filter((url) => url !== urlToRemove);
