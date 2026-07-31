@@ -2,10 +2,14 @@
 
 set -euo pipefail
 
-version="${1:-}"
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+project_dir="$(dirname "$script_dir")"
+cd "$project_dir"
+
+version="$(node -p "require('./package.json').version")"
 
 if [[ -z "$version" ]]; then
-  echo "Usage: pnpm release:image 1.0.1"
+  echo "Error: package.json does not contain a version."
   exit 1
 fi
 

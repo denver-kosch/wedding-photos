@@ -12,7 +12,7 @@ export default function UploadForm() {
   const [state, formAction, isPending] = useActionState( uploadPhotos, initialState );
     
     if (state.status === "success") return (
-        <section className='border rounded items-center justify-center text-center p-4 mt-4'>
+        <section className='border rounded items-center justify-center text-center p-4 mt-4 bg-white/70'>
                 <h2 className="">Thank you!</h2>
                 <p className="">Your photos have been added to our wedding album.{<br/>}We can't wait to look through them!</p>
         </section>

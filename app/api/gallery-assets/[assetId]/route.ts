@@ -19,11 +19,11 @@ export async function GET( _request: Request, context: {params: Promise<{assetId
         return new Response("Gallery is not configured", { status: 500 });
     }
 
-    const immichResponse = await fetch(`${immichUrl}/assets/${encodeURIComponent(assetId)}/thumbnail`, { headers: { "x-api-key": galleryKey }, cache: "no-store" });
+    const immichResponse = await fetch(`${immichUrl}/assets/${encodeURIComponent(assetId)}/original`, { headers: { "x-api-key": galleryKey }, cache: "no-store" });
 
     if (!immichResponse.ok) {
         const errorText = await immichResponse.text();
-        console.error("Immich thumbnail request failed", { assetId, status: immichResponse.status, error: errorText });
+        console.error("Immich photo request failed", { assetId, status: immichResponse.status, error: errorText });
         return new Response("Unable to retrieve photo", { status: immichResponse.status === 404 ? 404 : 502 });
     }
 
